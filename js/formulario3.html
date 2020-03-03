@@ -26,6 +26,8 @@
   </body>
 </html>
 
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -50,7 +52,9 @@
     </form>
   </body>
 </html>
--->
+
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -59,27 +63,23 @@
     <script type="text/javascript">
       var cantidad = function(){
         var valor1 = parseInt(document.getElementById('V1').value);
-        var cont=0;
-
-
-
-        var suma=0;
-        for(var i=1; i<=valor1; i++){
-          if (i%2 == 0) {
-            suma += i;
-          };
-        };
-
-
-
-        while(valor1>=1){
-          valor1=valor1/10;
-          cont++;
+        var cant=0;
+        var par=0;
+        var impar=0;
+        var numero=0;
+        while(valor1>0){
+          numero=valor1%10;
+          if(numero%2==0){
+            par=par+numero;
+          }else{
+            impar=impar+numero;
+          }
+          cant=cant+1;
+          valor1=Math.round(valor1/10);
         }
-        document.getElementById("resultado").value = "El número de dígitos es "+ cont;
-
-        document.getElementById("resultadopar").value = "La suma par es: "+ suma;
-        document.getElementById("resultadoimpar").value = "La suma impar es: "+ suma;
+        document.getElementById("resultado").value = cant;
+        document.getElementById("resultadopar").value = par;
+        document.getElementById("resultadoimpar").value = impar;
       };
     </script>
   </head>
@@ -87,7 +87,48 @@
     <form>
       <p>Venta 1: <input type="text" id="V1" size="20"></p>
       <p><input type="button" value="Calcular" onclick="cantidad()"></p>
-      <p>Resultado: <input type="text" size="100" id="resultado" disabled="disabled"></p>
+      <p>Dígitos: <input type="text" size="100" id="resultado" disabled="disabled"></p>
+      <p>Resultado de suma par: <input type="text" size="100" id="resultadopar" disabled="disabled"></p>
+      <p>Resultado de suma impar: <input type="text" size="100" id="resultadoimpar" disabled="disabled"></p>
+    </form>
+  </body>
+</html>
+-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario de Cantidad de Dígitos - JavaScript</title>
+    <script type="text/javascript">
+      var cantidad = function(){
+        var valor1 = parseInt(document.getElementById('V1').value);
+        var cant=0;
+        var par=0;
+        var impar=0;
+        var numero=0;
+        while(valor1>0){
+          numero=valor1%10;
+          if(numero%2==0){
+            par=par+numero;
+          }else{
+            impar=impar+numero;
+          }
+          cant=cant+1;
+          valor1=Math.round(valor1/10);
+        }
+        document.getElementById("resultado").value = cant;
+        document.getElementById("resultadopar").value = par;
+        document.getElementById("resultadoimpar").value = impar;
+      };
+    </script>
+  </head>
+  <body>
+    <form>
+      <p>Venta 1: <input type="text" id="V1" size="20"></p>
+      <p><input type="button" value="Calcular" onclick="cantidad()"></p>
+      <p>Dígitos: <input type="text" size="100" id="resultado" disabled="disabled"></p>
       <p>Resultado de suma par: <input type="text" size="100" id="resultadopar" disabled="disabled"></p>
       <p>Resultado de suma impar: <input type="text" size="100" id="resultadoimpar" disabled="disabled"></p>
     </form>
