@@ -61,22 +61,25 @@
         var valor1 = parseInt(document.getElementById('V1').value);
         var cont=0;
 
+
+
+        var suma=0;
+        for(var i=1; i<=valor1; i++){
+          if (i%2 == 0) {
+            suma += i;
+          };
+        };
+
+
+
         while(valor1>=1){
           valor1=valor1/10;
           cont++;
         }
         document.getElementById("resultado").value = "El número de dígitos es "+ cont;
 
-        var validar=valor1%10;
-        valor1=(valor1-validar)/10;
-
-        if(valor1%2==0){
-          var sumpar=validar;
-        }else{
-          var sumimpar=validar;
-        }
-        document.getElementById("resultadopar").value = "La suma par es: "+ sumpar;
-        document.getElementById("resultadoimpar").value = "La suma impar es: "+ sumimpar;
+        document.getElementById("resultadopar").value = "La suma par es: "+ suma;
+        document.getElementById("resultadoimpar").value = "La suma impar es: "+ suma;
       };
     </script>
   </head>
