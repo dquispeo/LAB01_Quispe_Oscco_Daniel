@@ -1,31 +1,38 @@
 <?php
-$respuesta="";
-$total=0;
 $valor1 = 0;
+$valor2 = 0;
 if(isset($_POST)){
   $valor1 = $_POST['V1'];
-  if($valor1<=150){
-    $respuesta = "La venta es menor a S/.150, por eso no recibes comisión.";
-  }else if($valor1<=400){
-    $respuesta = "Resives comisión de 10%: ";
-    $total=($valor1*0.1);
-  }else if($valor1>400){
-    $respuesta = "Resives S/.50 más 9% de comisión de las ventas: ";
-    $total=(($valor1*0.09)+50);
+  $valor2 = $valor1;
+  $cant=0;
+  $par=0;
+  $impar=0;
+  $numero=0;
+  while($valor1>0){
+    $numero=$valor1%10;
+    if($numero%2==0){
+      $par=$par+$numero;
+    }else{
+      $impar=$impar+$numero;
+    }
+    $cant=$cant+1;
+    $valor1=round($valor1/10);
   }
 }
 ?>
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Formulario de Comisión - PHP</title>
+    <title>Formulario de Cantidad de Dígitos - PHP</title>
   </head>
   <body>
     <form class="" action="" method="post">
-      <p>Valor 1: <input type="text" id="V1" name="V1" size="20" value="<?php $valor1; ?>"></p>
+      <p>Número: <input type="text" id="V1" name="V1" size="20" value="<?php $valor1; ?>"></p>
       <p><input type="submit" name="B1" size="100" value="Calcular"></p>
-      <p>Venta: <?php echo " S/.".$valor1; ?></p>
-      <p>Resultado: <?php echo $respuesta." S/.".$total; ?></p>
+      <p>Número: <?php echo $valor2; ?></p>
+      <p>Número de dígitos: <?php echo $cant; ?></p>
+      <p>Suma de número pares: <?php echo $par; ?></p>
+      <p>Suma de número impares: <?php echo $impar; ?></p>
     </form>
   </body>
 </html>
