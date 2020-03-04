@@ -1,0 +1,4 @@
+- XAMPP está liberado bajo la licencia GNU y actúa como un servidor Web libre, fácil de usar y capaz de interpretar páginas dinámicas. Actualmente XAMPP esta disponible para Microsoft Windows, GNU/Linux, Solaris, y MacOS X.
+- Nos ayuda a empezar  proyectos web o revisar alguna aplicación localmente. Ademas trae otros servicios como servidor de correos y servidor FTP.
+- La ventaja de trabajor en el lado del servidor es que se evita problemas de compatibilidad, reduce la cantidad de errores, es más segura que la del cliente, etc.
+- La ventaja de trabajar en el lado del cliente es que es más rápido, tiene varias opciones de efectos visuales, es muy versátil, es multiplataforma, etc.
